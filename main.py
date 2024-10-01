@@ -1,55 +1,53 @@
-
 print("\nMENU INICIAL\n Olá, seja bem vindo!")
 
-while True:
-    usuario= input("Voce é aluno ou professor? ")
-    if usuario == "professor" or usuario == "aluno":
-        break
-    else:
-        print("Opção Inválida. Tente novamente!")    
+
+def opcao_usuario(): 
+    while True: #looping continua até uma opção válida for imformada
+        usuario = input("Voce é aluno ou professor? ")
+        if usuario in ["professor", "aluno"]: #verifica se a variavel usuario está na lista   
+            return usuario #retorna quando a variavel armazenar o valor correto, assim encerrando o looping
+
+def menu_professor():
+    while True:  #termina quando o usuário escolher a opção sair
+        opcao = int(input("\n[1] adicionar\n[2] editar\n[3] pesquisar\n[4] imprimir\n[5] sair\n ")) 
+        if opcao == 1:
+            print("Adicionar:")
+        elif opcao == 2:
+            print("Editar:")
+        elif opcao == 3:
+                print("Pesquisar:")
+        elif opcao == 4:
+                print("Imprimir:")
+        elif opcao == 5:
+            print("Saindo...")
+            break #o looping se encerra quando o usuário sai do programa
+        else:
+            print("Opção inválida. Tente novamente!")
+
+def menu_aluno():
+    while True: #termina quando o usuário escolher a opção sair
+        opcao = int(input("\n[1] pesquise\n[2] imprimir\n[3] sair\n "))
+        if opcao == 1:
+            print("Pesquisar:")
+        elif opcao == 2:
+            print("Imprimir:")
+        elif opcao == 3:
+            print("Saindo...")
+            break #o looping se encerra quando o usuário sai do programa
+        else:
+            print("Opção inválida. Tente novamente!")
+
+def menu_principal():
+    usuario = opcao_usuario() #salva a função na variavel usuário
+    if usuario == "professor":
+        menu_professor() 
+    elif usuario == "aluno": 
+        menu_aluno()
+
+menu_principal() #retorna a funcao de menu principal para rodar o programa
+
         
-        if usuario == "professor":
-            opcao_professor = int(input("\n[1] adicione\n[2] edite\n[3] pesquise\n[4] imprimir\n[5] sair"))
-            print(opcao_professor)
-
-        elif usuario == "aluno":
-            opcao_aluno = int(input("\n[1] pesquise\n[2] imprimir\n[3] sair "))
-            print(f"Você escolheu a opcao: {opcao_aluno}")
-   
     
 
     
    
-
-
-# if opcao == "aluno":
-#  print("Opções para alunos: pesquisar, visualizar ou sair")
-
-# opcao = input("Informe se você é professor ou aluno: ")
-
-# def usuarios():
-#     if os.path.exists("cadastro.txt"):
-
-
-#         variaveis_carregadas = carregar_variaveis("cadastro.txt")
-
-#         if variaveis_carregadas:
-
-#            
-#             elif opcao == "professor":
-
-
-
-#fazer depois
-# def salvar_variaveis(path_file, **kwargs): #criei a função salvar variavel para salvar o nome do aluno quando ele pesquisar no boletim
-#     with open(path_file, 'w') as s:
-#         for chave, valor in kwargs.items():
-#             s.write(f"{chave}: {valor}\n")
-
-# def carregar_variaveis(path_file):
-#     variaveis = {}
-#     with open(path_file, 'r') as f:
-#         for line in f:
-#             chave, valor = line.strip().split(': ')
-#             variaveis[chave] = valor
-#     return variaveis
