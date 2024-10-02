@@ -46,6 +46,3 @@ def salvar_novo_aluno(path_file, **kwargs):  # cria arquivo
         file.write(linha_aluno + "\n")  # Adicionando os dados do aluno em uma linha
      
 add_novo_aluno()
-
-
-    
