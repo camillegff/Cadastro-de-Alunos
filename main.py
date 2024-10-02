@@ -20,7 +20,7 @@ def menu_professor():
                 print("Imprimir:")
         elif opcao == 5:
             print("Saindo...")
-            break #o looping se encerra quando o usuário sai do programa
+            break #o looping se encerra quando o usuário sai do progchrama
         else:
             print("Opção inválida. Tente novamente!")
 
