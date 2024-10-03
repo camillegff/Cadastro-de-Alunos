@@ -1,1 +1,2 @@
-nome: ANA, sobrenome: MARTINS
+nome: 10 | sobrenome: 9 | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: ANA | sobrenome: BASTOS | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  

@@ -1,14 +1,17 @@
 # cadastrar: opção para adicionar (turma, nome e sobrenome).
-
-
-
 def dados_aluno(): #captar dados do aluno
     print("Ola\n Cadestre o aluno")
     nome = input("Digite o nome do aluno: ").upper()
     sobrenome = input("Digite o sobrenome do aluno: ").upper()
     aluno = {
         "nome": nome,
-        "sobrenome": sobrenome 
+        "sobrenome": sobrenome,
+        "n1": "0",
+        "n2": "0",
+        "n3": "0",
+        "media_notas":"0",
+        "frequência":" ",#adicionar nota e frequencia
+        "situação escolar":" ",# adicionar se passou ou não
     }
     return aluno
 
@@ -34,25 +37,15 @@ def add_novo_aluno():  # adicionar alunos na lista e salvar
     
 def salvar_novo_aluno(path_file, **kwargs):  # cria arquivo
     with open(path_file, 'a') as file:
-        linha_aluno = '|'.join([f"{chave}: {valor}" for chave, valor in kwargs.items()])
+        total_items = len(kwargs)  # Número total de itens
+        linha_aluno = ''
+        for index, (chave, valor) in enumerate(kwargs.items()):
+            linha_aluno += f"{chave}: {valor}"
+            if index < total_items - 1:  # Se não for o último item, adiciona o separador '|'
+                linha_aluno += ' | '
         file.write(linha_aluno + "\n")  # Adicionando os dados do aluno em uma linha
-    
-            
-def add_nota():
-    nota1 = float(input("Digite a Nota 1: "))
-    nota2 = float(input("Digite a Nota 2: "))
-    nota3 = float(input("Digite a Nota 3: "))
-    media_notas = (nota1 + nota2 + nota3) / 3
-
-def add_freqencia():
-    freq1 = float(input("Digite a Frequência 1 (em %): "))
-    freq2 = float(input("Digite a Frequência 2 (em %): "))
-    freq3 = float(input("Digite a Frequência 3 (em %): "))
-    media_frequencia = (freq1 + freq2 + freq3) / 3        
-    
-            
-
-
+     
 add_novo_aluno()
+
 
     
