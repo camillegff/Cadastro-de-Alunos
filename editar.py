@@ -18,3 +18,6 @@ def add_nota(path_file, **kwargs):
     dicionario["n2"] = nota2
     dicionario["n3"] = nota3
     dicionario["media_notas"] = media_notas
+
+
+add_nota()   
