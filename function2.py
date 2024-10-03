@@ -8,7 +8,7 @@ def dados_aluno(): #captar dados do aluno
     sobrenome = input("Digite o sobrenome do aluno: ").upper()
     aluno = {
         "nome": nome,
-        "sobrenome": sobrenome #adicionar nota e frequencia( ver se faz funcao ou nao)
+        "sobrenome": sobrenome 
     }
     return aluno
 
@@ -32,15 +32,23 @@ def add_novo_aluno():  # adicionar alunos na lista e salvar
         print("Aluno não adicionado devido a erro na seleção da turma.")  # Mensagem de erro
     print(f"Aluno adicionado: {aluno}")
     
-def salvar_novo_aluno(path_file, **kwargs):# cria arquivo
+def salvar_novo_aluno(path_file, **kwargs):  # cria arquivo
     with open(path_file, 'a') as file:
-        for chave, valor in kwargs.items():
-            file.write(f"\n{chave}: {valor}\n")    
+        linha_aluno = '|'.join([f"{chave}: {valor}" for chave, valor in kwargs.items()])
+        file.write(linha_aluno + "\n")  # Adicionando os dados do aluno em uma linha
+    
             
 def add_nota():
-    N1= input("")
-    N2= input("")
-    N3= input("")
+    nota1 = float(input("Digite a Nota 1: "))
+    nota2 = float(input("Digite a Nota 2: "))
+    nota3 = float(input("Digite a Nota 3: "))
+    media_notas = (nota1 + nota2 + nota3) / 3
+
+def add_freqencia():
+    freq1 = float(input("Digite a Frequência 1 (em %): "))
+    freq2 = float(input("Digite a Frequência 2 (em %): "))
+    freq3 = float(input("Digite a Frequência 3 (em %): "))
+    media_frequencia = (freq1 + freq2 + freq3) / 3        
     
             
 
