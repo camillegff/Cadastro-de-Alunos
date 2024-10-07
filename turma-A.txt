@@ -1,2 +1,11 @@
 nome: ANA | sobrenome: BANANA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequï¿½ncia:   | situaï¿½ï¿½o escolar:  
-
+nome: CAIO | sobrenome: RODRIGUES | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequï¿½ncia:   | situaï¿½ï¿½o escolar:  
+nome: LUCAS  | sobrenome: GARCIA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: PEDRO | sobrenome: ALBERTO | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: VITORIA | sobrenome: SANTOS | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: FERNANDO | sobrenome: SANTOS | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: CAMILLE | sobrenome: GRAEFF | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: JOAO | sobrenome: MIGUEL | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: JULIA | sobrenome: CLARISSA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: CARLOS | sobrenome: ALBERTO | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: CAMILLE | sobrenome: VITORIA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
