@@ -1,4 +1,19 @@
-def add_nota(path_file, **kwargs):
+import cadastrar as add
+
+def editar_notas_menu():
+    turma = add.escolher_turma()
+    
+    if turma:
+        nome_aluno = input("Informe o nome do aluno que deseja editar as notas: ").upper()
+        editar_notas(turma, nome_aluno)
+    else:
+        print("Nenhuma turma válida foi selecionada.")     
+        
+        
+        
+
+def add_nota(path_file, nome_aluno):
+    
     dicionario = {}
     nota1 = float(input("Digite a Nota 1: "))
     nota2 = float(input("Digite a Nota 2: "))
