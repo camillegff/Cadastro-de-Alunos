@@ -5,7 +5,7 @@ def add_nota(path_file, **kwargs):
     nota3 = float(input("Digite a Nota 3: "))
     media_notas = (nota1 + nota2 + nota3) /3
 
-    with open(path_file,"r") as f:
+    with open(path_file,"r", encoding='utf-8' ) as f:
         line = f.readlines()[-1]#pegar a ultima linha
         partes = line.split(' | ')
 

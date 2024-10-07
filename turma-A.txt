@@ -1,1 +1,1 @@
-nome: ANA | sobrenome: BANANA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: MARIO | sobrenome: LONDRINE | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequÃªncia:   | situaÃ§Ã£o escolar:  
