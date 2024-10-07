@@ -1,3 +1,5 @@
+import pesquisar as p
+
 def menu_professor():
     while True:  # Termina quando o usuário escolher a opção sair
         opcao = int(input("\n[1]Cadastrar Aluno\n[2]Editar Aluno\n[3]Pesquisar\n[4]Visualizar Turma\n[5]Sair\n\nDigite uma opção: "))
@@ -20,6 +22,7 @@ def menu_aluno():
         opcao = int(input("\nMenu principal\n\n[1]Pesquisar por aluno\n[2]Gerar Boletim\n[3]Sair\n\nDigite uma opção: "))
         if opcao == 1:
             print("Pesquisar:")
+            p.pesquisar()
         elif opcao == 2:
             print("Imprimir:")
         elif opcao == 3:

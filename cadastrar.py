@@ -36,7 +36,7 @@ def add_novo_aluno():  # adicionar alunos na lista e salvar
     print(f"Aluno adicionado: {aluno}")
     
 def salvar_novo_aluno(path_file, **kwargs):  # cria arquivo
-    with open(path_file, 'a') as file:
+    with open(path_file, 'a',encoding='utf-8') as file:
         total_items = len(kwargs)  # Número total de itens
         linha_aluno = ''
         for index, (chave, valor) in enumerate(kwargs.items()):
@@ -45,4 +45,4 @@ def salvar_novo_aluno(path_file, **kwargs):  # cria arquivo
                 linha_aluno += ' | '
         file.write(linha_aluno + "\n")  # Adicionando os dados do aluno em uma linha
      
-add_novo_aluno()
+

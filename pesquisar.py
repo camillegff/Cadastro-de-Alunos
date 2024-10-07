@@ -6,7 +6,7 @@ def pesquisar():
 
     aluno_encontrado = None
 
-    with open(turma, "r") as f:
+    with open(turma, "r", encoding='utf-8') as f:
         for linha in f:
             if boletim_aluno in linha.upper():  
                 aluno_encontrado = linha.strip()
@@ -30,5 +30,5 @@ def pesquisar():
         else:
             print("Opção inválida. Tente novamente!")
 
-pesquisar()
+
 
