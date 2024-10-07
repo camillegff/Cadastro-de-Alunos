@@ -16,7 +16,7 @@ def dados_aluno(): #captar dados do aluno
     return aluno
 
 def escolher_turma():  # Opção de turma 
-    TURMA = input("Informe a que turma o aluno está matriculado\n turma [A] ou turma [B]: ").upper()
+    TURMA = input("INFORME A TURMA:\n Turma [A] ou Turma [B]: ").upper()
     if TURMA == "A":
         return "turma-A.txt"  # nome do arquivo para a turma A
     elif TURMA == "B":
@@ -27,13 +27,14 @@ def escolher_turma():  # Opção de turma
 
 def add_novo_aluno():  # adicionar alunos na lista e salvar
     aluno = dados_aluno()
-    path_file = escolher_turma() 
+    path_file = escolher_turma()
+    nome_turma = path_file.replace(".txt", "").replace("turma-", "").upper() 
     if path_file:  # Verifica se a turma é válida
         salvar_novo_aluno(path_file, **aluno)  # Salva o aluno no arquivo correspondente
-        print(f"Aluno adicionado: {aluno}")  # Mensagem de confirmação
+        print(f"Aluno {aluno['nome']} adicionado com sucesso na turma {nome_turma}")  # Mensagem de confirmação
     else:
-        print("Aluno não adicionado devido a erro na seleção da turma.")  # Mensagem de erro
-    print(f"Aluno adicionado: {aluno}")
+        print("Aluno não adicionado\nTurma inexistente!")  # Mensagem de erro
+    
     
 def salvar_novo_aluno(path_file, **kwargs):  # cria arquivo
     with open(path_file, 'a',encoding='utf-8') as file:

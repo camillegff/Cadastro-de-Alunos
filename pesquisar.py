@@ -2,7 +2,7 @@ from cadastrar import escolher_turma
 
 def pesquisar():
     turma = escolher_turma()
-    boletim_aluno = input("Informe seu nome para consultar seu boletim: ").upper()
+    boletim_aluno = input("\n\nNome do aluno: ").upper()# removi o texto anterior para deixar utilizavel para os dois acessos
 
     aluno_encontrado = None
 
@@ -14,21 +14,27 @@ def pesquisar():
 
 
     if aluno_encontrado:
-        print(f"Boletim Anual: {aluno_encontrado}")  
+        print(f"\n\nBoletim Anual: {aluno_encontrado}\n\n")  
     else:
         print("Aluno não encontrado.") 
+ 
+ 
+def pesquisar_turma():# funcao do menu professor para imprimir a turma
+    turma = escolher_turma()
+    if turma:  
+        nome_turma = turma.replace(".txt", "").upper()
+        print(f"\n{nome_turma} localizada:\n\n")
+            
+        try:
+            with open(turma, "r", encoding='utf-8') as f:  # Abre o arquivo da turma
+                for linha in f:  # percorre linhas do arquivo
+                    print(linha.strip())  # Exibe as linhas, tira espaços em branco
+        except FileNotFoundError:
+            print("Arquivo de turma não encontrado.")
+    else:
+        print("Nenhuma turma válida foi selecionada.")    
 
-    opcao = int(input("\n\nParece que sua busca foi bem sucedida :)\nPor favor, me informe uma das três opções de acordo com seu desejo:\n[1]continuar a busca\n[2]sair\n[3]editar dados"))
-    while True:
-        if opcao == 1:
-            return pesquisar
-        elif opcao == 2:
-            print("Busca encerrada.")
-            break
-        elif opcao == 3:
-            print("função editar")
-        else:
-            print("Opção inválida. Tente novamente!")
+
 
 
 
