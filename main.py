@@ -1,6 +1,6 @@
 import pesquisar as p
 import cadastrar as add
-
+import excluir as ex
 def menu_professor():
     while True:  # Termina quando o usuário escolher a opção sair
         opcao = int(input("\n[1]Cadastrar Aluno\n[2]Editar Aluno\n[3]Pesquisar aluno\n[4]Visualizar Turma\n[5]Excluir aluno\n[6]Sair\n\nDigite uma opção: "))
@@ -44,5 +44,5 @@ def menu_principal():
         menu_aluno()  # Chama o menu do aluno
     else:
             print("Esse usuário não existe. Tente novamente!")            
+ 
 
-menu_principal()

@@ -1,23 +1,19 @@
 from cadastrar import escolher_turma
 
-def pesquisar():
+def pesquisar_aluno():
     turma = escolher_turma()
-    boletim_aluno = input("\n\nNome do aluno: ").upper()# removi o texto anterior para deixar utilizavel para os dois acessos
+    boletim_aluno = input("\n\nNome do aluno: ").upper()
 
-    aluno_encontrado = None
+    if aluno_encontrado: 
+        print(f"\n\nBoletim Anual: {aluno_encontrado}\n\n")
+        try:
+            with open(turma, "r", encoding='utf-8') as f:
+                for linha in f:
+                    if boletim_aluno in linha.upper():  
+                            aluno_encontrado = linha.strip()
+        except:
+            print("Aluno não encontrado.")
 
-    with open(turma, "r", encoding='utf-8') as f:
-        for linha in f:
-            if boletim_aluno in linha.upper():  
-                aluno_encontrado = linha.strip()
-                break
-
-
-    if aluno_encontrado:
-        print(f"\n\nBoletim Anual: {aluno_encontrado}\n\n")  
-    else:
-        print("Aluno não encontrado.") 
- 
  
 def pesquisar_turma():# funcao do menu professor para imprimir a turma
     turma = escolher_turma()
@@ -33,8 +29,4 @@ def pesquisar_turma():# funcao do menu professor para imprimir a turma
             print("Arquivo de turma não encontrado.")
     else:
         print("Nenhuma turma válida foi selecionada.")    
-
-
-
-
 

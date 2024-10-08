@@ -6,7 +6,5 @@ nome: VITORIA | sobrenome: SANTOS | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | fre
 nome: FERNANDO | sobrenome: SANTOS | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequ�ncia:   | situa��o escolar:  
 nome: CAMILLE | sobrenome: GRAEFF | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequ�ncia:   | situa��o escolar:  
 nome: JOAO | sobrenome: MIGUEL | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequ�ncia:   | situa��o escolar:  
-nome: JULIA | sobrenome: CLARISSA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequ�ncia:   | situa��o escolar:  
 nome: CARLOS | sobrenome: ALBERTO | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequ�ncia:   | situa��o escolar:  
 nome: CAMILLE | sobrenome: VITORIA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequ�ncia:   | situa��o escolar:  
-
