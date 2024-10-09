@@ -6,11 +6,13 @@ def excluir_aluno():
     
     listar_alunos(turma)
     alunos = retorne_lista_alunos(turma)
-    aluno = int(input("número do Aluno que deseja excluir: ").upper())
+    aluno = int(input("Número do aluno que deseja excluir: "))
 
-   
-    print("Excluindo...")
-
+    if aluno < 0 or aluno >= len(alunos):
+        print("Número inválido.")
+        return
+    
+    
     alunos_update = []
 
     with open(turma, "r", encoding='utf-8') as f:
@@ -21,8 +23,8 @@ def excluir_aluno():
                     pass
                 else:
                     alunos_update.append(linha)
-            except:
-                print()
+            except IndexError:
+                print("Erro ao acessar linha.")
 
     #print(alunos_update)
 
@@ -36,19 +38,16 @@ def listar_alunos(path_file):
     alunos = []
     with open(path_file, 'r', encoding='utf-8') as file:
         for linha in file:
-            aluno = {}
-            # Separando cada campo baseado no separador '|'
+            alunos = []
             campos = linha.strip().split(' | ')
             for i, campo  in enumerate(campos):
-                # Separando chave e valor baseado no ':'
                 if i == len(campos) - 1:
-                 
                     pass
+
                 else:
                     chave, valor = campo.split(': ')
                     aluno[chave] = valor
 
-                
             alunos.append(aluno)
 
     for i,aluno in enumerate(alunos):
@@ -58,19 +57,14 @@ def retorne_lista_alunos(path_file):
     alunos = []
     with open(path_file, 'r', encoding='utf-8') as file:
         for linha in file:
-            aluno = {}
-            # Separando cada campo baseado no separador '|'
+            aluno = {}                                               
             campos = linha.strip().split(' | ')
             for i, campo  in enumerate(campos):
-                # Separando chave e valor baseado no ':'
                 if i == len(campos) - 1:
-                 
                     pass
                 else:
                     chave, valor = campo.split(': ')
                     aluno[chave] = valor
-
-                
             alunos.append(aluno)
 
     return alunos
