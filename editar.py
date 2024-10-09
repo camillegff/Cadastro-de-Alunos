@@ -69,14 +69,14 @@ def editar_frequencia(turma, aluno):
     with open(turma, 'r', encoding='utf-8') as f:
         linhas = f.readlines()
     
-    for i, linha in enumerate(linhas):
-        if aluno in linha:
-            partes = linha.strip().split(' | ')
-            aluno_dict = {}
-            for parte in partes:
-                if ': ' in parte:
-                    chave, valor = parte.split(': ', 1)
-                    aluno_dict[chave] = valor
+    for i, linha in enumerate(linhas):#percorre as linhas do arquivo, enumerando pra ter o índice e a linha
+        if aluno in linha: #verifica se o nome do aluno (variável 'aluno') está presente na linha
+            partes = linha.strip().split(' | ')#divide a linha em partes 
+            aluno_dict = {}#cria um dicionario vazio  guarda os dados do aluno
+            for parte in partes:#percorre cada parte da lista partes
+                if ': ' in parte:#se tem : na parte
+                    chave, valor = parte.split(': ', 1)#divide chave-valor no dicionário
+                    aluno_dict[chave] = valor #salva chave-valor no dicionário
             
             # Editar frequência
             while True:
