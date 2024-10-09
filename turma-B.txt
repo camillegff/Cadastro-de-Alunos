@@ -1,1 +1,1 @@
-nome: VITÓRIA | sobrenome: FARIAS | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: MALU | sobrenome: LAERTE | n1: 9.0 | n2: 9.0 | n3: 9.0 | media_notas: 9.0 | frequencia: 90.0 | situacao_escolar: Aprovado

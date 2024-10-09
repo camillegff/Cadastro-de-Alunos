@@ -1,1 +1,1 @@
-nome: MARIO | sobrenome: LONDRINE | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequência:   | situação escolar:  
+nome: LAIS | sobrenome: SILVA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequencia: 0
