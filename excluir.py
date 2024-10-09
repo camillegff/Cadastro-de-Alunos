@@ -2,7 +2,7 @@
 from pesquisar import pesquisar  # Importa a função de pesquisa para buscar aluno
 
 def excluir_aluno():
-    print("\n\nMenu excluir aluno\n\n")
+    print("\n\nExcluir aluno\n\n")
     aluno_encontrado, turma = pesquisar()  #pesquisar para encontrar o aluno e a turma
     
     if aluno_encontrado:  # Verifica se o aluno foi encontrado
@@ -21,7 +21,7 @@ def excluir_aluno():
             
             print(f"Aluno {aluno_encontrado['nome']['sobrenome']} foi excluído com sucesso!")
         else:
-            print("Operação cancelada. Retornando ao menu.")
+            print("Operação cancelada.")
     else:
-        print("Aluno não encontrado. Retornando ao menu.")
+        print("Aluno não encontrado")
 

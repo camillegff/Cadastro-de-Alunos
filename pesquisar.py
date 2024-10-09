@@ -9,7 +9,7 @@ def pesquisar():
             try:
                 with open(turma, "r", encoding='utf-8') as f:
                     for linha in f:
-                        (linha.strip())
+                        print(linha.strip())
                 break  
             except FileNotFoundError:
                 print("Turma não encontrada. Tente novamente.")
@@ -53,8 +53,8 @@ def pesquisar():
  
 
 def pesquisar_turma():
-    print("\n\nMenu pesquisar turma\n\n")
-    turma = escolher_turma()  # Supondo que escolher_turma() retorna o caminho do arquivo da turma selecionada
+    print("\n\nPesquisar turma\n\n")
+    turma = escolher_turma() 
     nome_turma = turma.replace(".txt", "").upper()
     
     if turma:
@@ -63,7 +63,7 @@ def pesquisar_turma():
                 print(f"\n{nome_turma}\n\n")
                 for linha in f:
                     print(linha.strip())
-        except FileNotFoundError:
+        except FileNotFoundError:#se tiver erro notfound nao quebra retorna a mensagem e retorna pra aplicacao
             print("Turma não encontrada. Tente novamente.")
     else:
         print("Nenhuma turma válida foi selecionada.")
