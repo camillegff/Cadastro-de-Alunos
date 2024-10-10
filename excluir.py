@@ -7,7 +7,7 @@ def excluir_aluno():
     aluno_encontrado, turma = pesquisar()  #pesquisar para encontrar o aluno e a turma
     
     if aluno_encontrado:  # Verifica se o aluno foi encontrado
-        print(f"\nDeseja excluir o aluno {aluno_encontrado['nome']['sobrenome']} da turma {turma.replace('.txt', '').upper()}?")
+        print(f"\nDeseja excluir o aluno {aluno_encontrado['nome']} {aluno_encontrado['sobrenome']} da turma {turma.replace('.txt', '').upper()}?")
         confirmacao = input("Digite S para confirmar ou N para cancelar: ").upper()
         
         if confirmacao == 'S':
@@ -17,10 +17,11 @@ def excluir_aluno():
             
             with open(turma, 'w', encoding='utf-8') as f:
                 for linha in linhas:
-                    if aluno_encontrado not in linha:  #Reescreve todas as linhas que não correspondem ao aluno
+                    if aluno_encontrado['nome'] not in linha and aluno_encontrado['sobrenome'] not in linha:
                         f.write(linha)
+
             
-            print(f"Aluno {aluno_encontrado['nome']['sobrenome']} foi excluído com sucesso!")
+            print(f"Aluno {aluno_encontrado['nome']} {aluno_encontrado['sobrenome']} foi excluído com sucesso!")
         else:
             print("Operação cancelada.")
     else:

@@ -1,4 +1,4 @@
 
 nome: LAIS | sobrenome: SILVA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequencia: 0
 nome: LANA | sobrenome: DEL REI | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequencia: 0
->>>>>>> origin/fafah
+

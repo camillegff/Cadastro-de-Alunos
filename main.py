@@ -53,3 +53,4 @@ def menu_principal():#pronto
     else:
             print("Esse usuário não existe. Tente novamente!")    
 
+menu_principal()
