@@ -4,9 +4,9 @@ from pesquisar import pesquisar  # Importa a função de pesquisa para buscar al
 def excluir_aluno():
     print("\n\nExcluir aluno\n\n")
     aluno_encontrado, turma = pesquisar()  #pesquisar para encontrar o aluno e a turma
-    
+    nome_aluno = aluno_encontrado.split(" | ")[0].split(": ")[1]
     if aluno_encontrado:  # Verifica se o aluno foi encontrado
-        print(f"\nDeseja excluir o aluno {aluno_encontrado['nome']['sobrenome']} da turma {turma.replace('.txt', '').upper()}?")
+        print(f"\nDeseja excluir o aluno {nome_aluno} da turma {turma.replace('.txt', '').upper()}?")
         confirmacao = input("Digite S para confirmar ou N para cancelar: ").upper()
         
         if confirmacao == 'S':
@@ -19,7 +19,7 @@ def excluir_aluno():
                     if aluno_encontrado not in linha:  #Reescreve todas as linhas que não correspondem ao aluno
                         f.write(linha)
             
-            print(f"Aluno {aluno_encontrado['nome']['sobrenome']} foi excluído com sucesso!")
+            print(f"Aluno {nome_aluno} foi excluído com sucesso!")
         else:
             print("Operação cancelada.")
     else:

@@ -69,45 +69,45 @@ def editar_frequencia(turma, aluno):
     with open(turma, 'r', encoding='utf-8') as f:
         linhas = f.readlines()
     
-    for i, linha in enumerate(linhas):#percorre as linhas do arquivo, enumerando pra ter o índice e a linha
-        if aluno in linha: #verifica se o nome do aluno (variável 'aluno') está presente na linha
-            partes = linha.strip().split(' | ')#divide a linha em partes 
-            aluno_dict = {}#cria um dicionario vazio  guarda os dados do aluno
-            for parte in partes:#percorre cada parte da lista partes
-                if ': ' in parte:#se tem : na parte
-                    chave, valor = parte.split(': ', 1)#divide chave-valor no dicionário
-                    aluno_dict[chave] = valor #salva chave-valor no dicionário
-            
-            # Editar frequência
-            while True:
-                try:
-                    nova_frequencia = float(input(f"Frequência atual: {aluno_dict['frequencia']}%. Digite a nova frequência (0-100): "))
-                    if 0 <= nova_frequencia <= 100:
-                        aluno_dict['frequencia'] = str(nova_frequencia)
-                        break  # Se o valor for válido, saímos do loop
-                    else:
-                        print("Por favor, insira um número entre 0 e 100")
-                except ValueError:
-                    print("Por favor, insira um número entre 0 e 100.")
+        for i, linha in enumerate(linhas):#percorre as linhas do arquivo, enumerando pra ter o índice e a linha
+            if aluno == linha.split("\n")[0]: #verifica se o nome do aluno (variável 'aluno') está presente na linha
+                partes = linha.strip().split(' | ')#divide a linha em partes 
+                aluno_dict = {}#cria um dicionario vazio  guarda os dados do aluno
+                for parte in partes:#percorre cada parte da lista partes
+                    if ': ' in parte:#se tem : na parte
+                        chave, valor = parte.split(': ', 1)#divide chave-valor no dicionário
+                        aluno_dict[chave] = valor #salva chave-valor no dicionário
+                
+                # Editar frequência
+                while True:
+                    try:
+                        nova_frequencia = float(input(f"Frequência atual: {aluno_dict['frequencia']}%. Digite a nova frequência (0-100): "))
+                        if 0 <= nova_frequencia <= 100:
+                            aluno_dict['frequencia'] = str(nova_frequencia)
+                            break  # Se o valor for válido, saímos do loop
+                        else:
+                            print("Por favor, insira um número entre 0 e 100")
+                    except ValueError:
+                        print("Por favor, insira um número entre 0 e 100.")
 
-            # Atualizando a situação escolar
-            media = float(aluno_dict["media_notas"])
-            frequencia = float(aluno_dict['frequencia'])
-            if media >= 7 and frequencia >= 75:
-                aluno_dict["situacao_escolar"] = "Aprovado"
-            else:
-                aluno_dict["situacao_escolar"] = "Reprovado"
-            
-            print(f"Situação escolar atualizada para: {aluno_dict['situacao_escolar']}")
-            
-            # Atualizar a linha do aluno
-            novas_informacoes = ' | '.join([f'{chave}: {valor}' for chave, valor in aluno_dict.items()])
-            linhas[i] = novas_informacoes + '\n'
-            break
+                # Atualizando a situação escolar
+                media = float(aluno_dict["media_notas"])
+                frequencia = float(aluno_dict['frequencia'])
+                if media >= 7 and frequencia >= 75:
+                    aluno_dict["situacao_escolar"] = "Aprovado"
+                else:
+                    aluno_dict["situacao_escolar"] = "Reprovado"
+                
+                print(f"Situação escolar atualizada para: {aluno_dict['situacao_escolar']}")
+                
+                # Atualizar a linha do aluno
+                novas_informacoes = ' | '.join([f'{chave}: {valor}' for chave, valor in aluno_dict.items()])
+                linhas[i] = novas_informacoes + '\n'
+                break
     
     # Atualiza no arquivo
     with open(turma, 'w', encoding='utf-8') as f:
         f.writelines(linhas)
     
-    print(f"Frequência do aluno {aluno_dict["nome"]} atualizada com sucesso!")
+    # print(f"Frequência do aluno {aluno_dict["nome"]} atualizada com sucesso!")
 
