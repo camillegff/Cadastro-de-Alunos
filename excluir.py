@@ -1,72 +1,29 @@
 #criar funcao excluir
-from cadastrar import escolher_turma
+
+from pesquisar import pesquisar  # Importa a função de pesquisa para buscar aluno
 
 def excluir_aluno():
-    turma = escolher_turma()
+    print("\n\nExcluir aluno\n\n")
+    aluno_encontrado, turma = pesquisar()  #pesquisar para encontrar o aluno e a turma
     
-    listar_alunos(turma)
-    alunos = retorne_lista_alunos(turma)
-    aluno = int(input("Número do aluno que deseja excluir: "))
+    if aluno_encontrado:  # Verifica se o aluno foi encontrado
+        print(f"\nDeseja excluir o aluno {aluno_encontrado['nome']['sobrenome']} da turma {turma.replace('.txt', '').upper()}?")
+        confirmacao = input("Digite S para confirmar ou N para cancelar: ").upper()
+        
+        if confirmacao == 'S':
+            #excluir
+            with open(turma, 'r', encoding='utf-8') as f:
+                linhas = f.readlines() #lê as linhas 
+            
+            with open(turma, 'w', encoding='utf-8') as f:
+                for linha in linhas:
+                    if aluno_encontrado not in linha:  #Reescreve todas as linhas que não correspondem ao aluno
+                        f.write(linha)
+            
+            print(f"Aluno {aluno_encontrado['nome']['sobrenome']} foi excluído com sucesso!")
+        else:
+            print("Operação cancelada.")
+    else:
+        print("Aluno não encontrado")
 
-    if aluno < 0 or aluno >= len(alunos):
-        print("Número inválido.")
-        return
-    
-    
-    alunos_update = []
 
-    with open(turma, "r", encoding='utf-8') as f:
-        linhas = f.readlines()
-        for linha in linhas:
-            try:
-                if linha.split(": ")[1].split(" | ")[0] == alunos[aluno]["nome"]:
-                    pass
-                else:
-                    alunos_update.append(linha)
-            except IndexError:
-                print("Erro ao acessar linha.")
-
-    #print(alunos_update)
-
-    with open(turma, "w", encoding='utf-8') as f:
-        for aluno in alunos_update:
-            f.write(aluno)
-
-    
-                         
-def listar_alunos(path_file):
-    alunos = []
-    with open(path_file, 'r', encoding='utf-8') as file:
-        for linha in file:
-            alunos = []
-            campos = linha.strip().split(' | ')
-            for i, campo  in enumerate(campos):
-                if i == len(campos) - 1:
-                    pass
-
-                else:
-                    chave, valor = campo.split(': ')
-                    aluno[chave] = valor
-
-            alunos.append(aluno)
-
-    for i,aluno in enumerate(alunos):
-        print(f"{i} - {aluno}")
-
-def retorne_lista_alunos(path_file):
-    alunos = []
-    with open(path_file, 'r', encoding='utf-8') as file:
-        for linha in file:
-            aluno = {}                                               
-            campos = linha.strip().split(' | ')
-            for i, campo  in enumerate(campos):
-                if i == len(campos) - 1:
-                    pass
-                else:
-                    chave, valor = campo.split(': ')
-                    aluno[chave] = valor
-            alunos.append(aluno)
-
-    return alunos
-
-excluir_aluno()
