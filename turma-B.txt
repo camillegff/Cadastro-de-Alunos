@@ -1,1 +1,2 @@
-nome: MALU | sobrenome: LAERTE | n1: 1.0 | n2: 1.0 | n3: 1.0 | media_notas: 1.0 | frequencia: 90.0 | situacao_escolar: Aprovado
+nome: MARCELO | sobrenome: SILVA | n1: 10 | n2: 5 | n3: 3 | media_notas: 6.0 | frequencia: 100 | situacao_escolar: Reprovado
+nome: ANA | sobrenome: SILVA | n1: 0 | n2: 0 | n3: 0 | media_notas: 0 | frequencia: 0

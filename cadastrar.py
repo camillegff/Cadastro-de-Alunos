@@ -1,3 +1,4 @@
+from clearterminal import limpar_terminal
 # cadastrar: opção para adicionar (turma, nome e sobrenome).
 def dados_aluno():  # Captar dados do aluno
     print("\nMENU CADASTRO")
@@ -32,8 +33,11 @@ def add_novo_aluno():  # adicionar alunos na lista e salvar
     if path_file:  # Verifica se a turma é válida
         salvar_novo_aluno(path_file, **aluno)  # Salva o aluno no arquivo correspondente
         print(f"\nAluno {aluno['nome']} adicionado com sucesso na turma {nome_turma}")  # Mensagem de confirmação
+        limpar_terminal()
+
     else:
         print("\nAluno não adicionado\nTurma inexistente!")  # Mensagem de erro
+        limpar_terminal()
     
     
 def salvar_novo_aluno(path_file, **kwargs):  # cria arquivo
